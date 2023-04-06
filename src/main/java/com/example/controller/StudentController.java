@@ -21,7 +21,8 @@ public class StudentController {
     @Autowired
     private StudentRepository studentRepository;
 
-    /*  1. Create student +
+  /*
+  1. Create student +
   2. Get Student List. return all.+
   3. Get student by id.+
   4. Update student.+
@@ -35,45 +36,44 @@ public class StudentController {
         StudentDTO response = studentService.crate(studentDTO);
         return ResponseEntity.ok(response);
     }
+
     @GetMapping("/list")
     public ResponseEntity<List<StudentDTO>> getAll() {
         List<StudentDTO> list = studentService.getAll();
         return ResponseEntity.ok(list);
     }
+
     @GetMapping("/name")
-    public ResponseEntity<List<StudentEntity>> findByName (@RequestParam String name) {
-        return new  ResponseEntity(studentRepository.findByName(name),HttpStatus.OK);
+    public ResponseEntity<List<StudentEntity>> findByName(@RequestParam String name) {
+        return new ResponseEntity(studentRepository.findByName(name), HttpStatus.OK);
     }
+
     @GetMapping("/surname")
-    public ResponseEntity<List<StudentEntity>> findBySurname (@RequestParam String surname) {
-        return new  ResponseEntity(studentRepository.findBySurname(surname),HttpStatus.OK);
+    public ResponseEntity<List<StudentEntity>> findBySurname(@RequestParam String surname) {
+        return new ResponseEntity(studentRepository.findBySurname(surname), HttpStatus.OK);
     }
-     @GetMapping("/level")
-    public ResponseEntity<List<StudentEntity>> findByLevel (@RequestParam Integer level) {
-        return new  ResponseEntity(studentRepository.findByLevel(level),HttpStatus.OK);
+
+    @GetMapping("/level")
+    public ResponseEntity<List<StudentEntity>> findByLevel(@RequestParam Integer level) {
+        return new ResponseEntity(studentRepository.findByLevel(level), HttpStatus.OK);
     }
+
     @GetMapping("/age")
-    public ResponseEntity<List<StudentEntity>> findByAge (@RequestParam Integer age) {
-        return new  ResponseEntity(studentRepository.findByAge(age),HttpStatus.OK);
+    public ResponseEntity<List<StudentEntity>> findByAge(@RequestParam Integer age) {
+        return new ResponseEntity(studentRepository.findByAge(age), HttpStatus.OK);
     }
+
     @GetMapping("/gender")
-    public ResponseEntity<List<StudentEntity>> findByGender (@RequestParam String gender) {
-        return new  ResponseEntity(studentRepository.findByGender(gender),HttpStatus.OK);
+    public ResponseEntity<List<StudentEntity>> findByGender(@RequestParam String gender) {
+        return new ResponseEntity(studentRepository.findByGender(gender), HttpStatus.OK);
     }
 
-
-    /*
-    @GetMapping("/laptops/name")
-	public ResponseEntity<List<Laptop>> getLaptopsByName(@RequestParam String name) {
-		return new ResponseEntity<List<Laptop>>(lRepo.findByName(name), HttpStatus.OK);
-	}
-
-    * */
     @GetMapping(value = "/get/{id}")
     public ResponseEntity<?> getById(@PathVariable("id") Integer id) {
         StudentDTO dto = studentService.getById(id);
         return ResponseEntity.ok(dto);
     }
+
     @PutMapping(value = "/update/{id}")
     public ResponseEntity<?> update(@PathVariable("id") Integer id, @RequestBody StudentDTO studentDTO) {
         return ResponseEntity.ok(studentService.update(id, studentDTO));
@@ -84,10 +84,4 @@ public class StudentController {
         return ResponseEntity.ok(studentService.delete(id));
     }
 
-    /*
-    @GetMapping("/laptops/name")
-	public ResponseEntity<List<Laptop>> getLaptopsByName(@RequestParam String name) {
-		return new ResponseEntity<List<Laptop>>(lRepo.findByName(name), HttpStatus.OK);
-	}
-     */
 }

@@ -1,0 +1,31 @@
+### Cource create
+POST localhost:8080/course/create
+Content-Type: application/json
+
+{
+  "name": "Dasturiy injenering",
+  "price": 12,
+  "duration": 3
+}
+
+### Get bay name
+GET localhost:8080/course/name
+Content-Type: application/json
+
+{
+  "name": "Dasturiy injenering"
+}
+### Cource list
+GET localhost:8080/course/list
+
+### Cource by id
+GET localhost:8080/course/get/2
+
+### Cource update
+PUT localhost:8080/course/update/
+Content-Type: application/json
+
+{
+  "name": "Dasturiy injenering"
+
+}

@@ -3,7 +3,7 @@ POST localhost:8080/student/create
 Content-Type: application/json
 
 {
-  "name": "Karim",
+  "name": "Toshmat32",
   "surname": "Azizov"
 }
 
@@ -26,6 +26,6 @@ PUT localhost:8080/student/update/
 Content-Type: application/json
 
 {
-  "name": "Qo'y",
+  "name": "Kozim",
   "surname": "Qo'chqorov"
 }
