@@ -13,7 +13,7 @@ import java.time.LocalDateTime;
 @Table(name = "student")
 public class StudentEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Integer id;
     @Column(name = "name")
     private String name;

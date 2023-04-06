@@ -1,0 +1,31 @@
+### Student create
+POST localhost:8080/student/create
+Content-Type: application/json
+
+{
+  "name": "Karim",
+  "surname": "Azizov"
+}
+
+
+### Get bay name
+GET localhost:8080/student/name
+Content-Type: application/json
+
+{
+"name": "Karim"
+}
+### Student list
+GET localhost:8080/student/list
+
+### Student by id
+GET localhost:8080/student/get/
+
+### Student update
+PUT localhost:8080/student/update/
+Content-Type: application/json
+
+{
+  "name": "Qo'y",
+  "surname": "Qo'chqorov"
+}

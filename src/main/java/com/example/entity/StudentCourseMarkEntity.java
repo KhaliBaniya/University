@@ -12,10 +12,17 @@ import java.time.LocalDateTime;
 @Table(name = "student_mark")
 public class StudentCourseMarkEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Integer id;
-    private Integer studentId;
-    private Integer courseId;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "student_id")
+    private StudentEntity student;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "course_id")
+    private CourseEntity course;
+    @Column(name = "mark")
     private Integer mark;
+    @Column(name = "createdDate")
+
     private LocalDateTime createdDate;
 }
